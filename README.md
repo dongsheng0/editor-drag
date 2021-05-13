@@ -9,8 +9,7 @@
 - react-grid-layout
 - echarts
 -braft-editor
-
-本地此项目，本地启动，可以看到有编辑器的效果
+本地启动，可以看到有编辑器的效果
 ## License
 
 MIT
