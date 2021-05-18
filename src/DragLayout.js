@@ -100,7 +100,8 @@ export default class DragLayout extends PureComponent {
 
   addChart(type) {
     const addItem = {
-      x: (this.state.widgets.length * 3) % (this.state.cols || 12),
+      x: 0,
+      // x: (this.state.widgets.length * 3) % (this.state.cols || 12),
       y: Infinity, // puts it at the bottom
       w: 3,
       h: 2,
@@ -117,7 +118,8 @@ export default class DragLayout extends PureComponent {
   };
   addChart2() {
     const addItem = {
-      x: (this.state.widgets.length * 3) % (this.state.cols || 12),
+      // x: (this.state.widgets.length * 3) % (this.state.cols || 12),
+      x: 0,
       y: Infinity, // puts it at the bottom
       w: 3,
       h: 2,
@@ -142,7 +144,12 @@ export default class DragLayout extends PureComponent {
   }
 
   onLayoutChange(layout, layouts) {
-    this.saveToLS("layouts", layouts);
+    // 为了实现每个组件只占一行，手动把个组件的x固定是0 ，它就是一直是占一行
+    Object.keys(layouts).forEach(item => {
+      layouts[item].forEach(i => {
+        i.x = 0 
+      })
+    })
     this.setState({ layouts });
   }
 
