@@ -8,7 +8,8 @@
 - Ant Design
 - react-grid-layout
 - echarts
-
+-braft-editor
+本地启动，可以看到有编辑器的效果
 ## License
 
 MIT
